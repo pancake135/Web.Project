@@ -1,0 +1,134 @@
+/* ========== 기본 설정 ========== */
+:root {
+  --page-transition-duration: .3s;
+  --page-transition-delay: .3s;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  background-color: #0a0a16;
+  color: #e4e5ea;
+  font-family: din-round, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  line-height: inherit;
+  letter-spacing: .2rem;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* ========== 배치 (display / position) ========== */
+.grid     { display: grid; }
+.flex     { display: flex; }
+.relative { position: relative; }
+.fixed    { position: fixed; }
+.top-0    { top: 0; }
+.left-0   { left: 0; }
+.z-20     { z-index: 20; }
+
+/* ========== 플렉스 정렬 ========== */
+.flex-col        { flex-direction: column; }
+.flex-wrap       { flex-wrap: wrap; }
+.items-center    { align-items: center; }
+.items-stretch   { align-items: stretch; }
+.justify-center  { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-4           { gap: 1rem; }
+
+/* ========== 크기 ========== */
+.w-full       { width: 100%; }
+.h-full       { height: 100%; }
+.max-w-xl     { max-width: 36rem; }
+.min-h-screen { min-height: 100vh; }
+
+/* ========== 여백 ========== */
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-2 { padding-top: .5rem; padding-bottom: .5rem; }
+
+/* ========== 배경 ========== */
+.bg-primary-800 { --tw-bg-opacity: 1; background-color: rgb(43 44 54 / var(--tw-bg-opacity)); }
+.bg-primary-900 { --tw-bg-opacity: 1; background-color: rgb(10 10 22 / var(--tw-bg-opacity)); }
+.bg-opacity-40  { --tw-bg-opacity: .4; }
+
+.bg-cover     { background-size: cover; }
+.bg-center    { background-position: center; }
+.bg-no-repeat { background-repeat: no-repeat; }
+
+/* ========== 효과 ========== */
+.backdrop-blur-md { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.duration-200     { transition-duration: .2s; }
+.ease-in-out      { transition-timing-function: cubic-bezier(.4, 0, .2, 1); }
+
+/* ========== 직접 만든 클래스 ========== */
+.template    { grid-template-rows: 1fr auto; }
+.fuck-header { padding-top: 3rem; }
+
+.page-link { position: relative; }
+.page-link::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 0;
+  height: 1px;
+  background-color: #b20d31;
+  transition: width .2s cubic-bezier(.4, 0, .2, 1);
+}
+.page-link:hover::after,
+.page-link:focus::after {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+
+/* ========== 메뉴 버튼 (Profile / Projects) ========== */
+.menu-link {
+  flex: 1;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: background-color .2s cubic-bezier(.4, 0, .2, 1);
+}
+.menu-link:hover { --tw-bg-opacity: .6; }
+
+/* ========== 햄버거 버튼 ========== */
+.sandwich-button {
+  --distance: .65rem;
+  --rotation: 0deg;
+  --duration: .15s;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+.sandwich-button::before,
+.sandwich-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transition: top var(--duration) ease-in-out,
+              bottom var(--duration) ease-in-out,
+              transform var(--duration) ease-in-out var(--duration);
+}
+.sandwich-button::before { top: var(--distance); transform: rotate(var(--rotation)); }
+.sandwich-button::after  { bottom: var(--distance); transform: rotate(calc(var(--rotation) * -1)); }
+.sandwich-button.active  { --distance: calc(50% - 1px); --rotation: 45deg; }
+
+/* ========== 푸터 ========== */
+.credit {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 12px;
+}

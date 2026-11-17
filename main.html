@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ujchoi</title>
+
+  <meta property="og:title" content="내 이름">
+  <meta property="og:image" content="phto.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>test</h1>
+  <div class="template grid min-h-screen bg-primary-800">
+
+    <header class="site-header fixed top-0 left-0 z-20 flex w-full flex-wrap items-center justify-between bg-primary-900 bg-opacity-40 backdrop-blur-md px-4 py-2">
+      <a href="index.html" class="page-link">MySite</a>
+      <div class="flex items-center gap-4">
+        <button type="button" class="sandwich-button relative" aria-label="메뉴"
+                onclick="this.classList.toggle('active')"></button>
+      </div>
+    </header>
+
+    <main>
+      <div class="background fuck-header relative flex h-full items-center justify-center bg-cover bg-center bg-no-repeat px-4"
+           style="background-image: url('phto.jpg');">
+        <div class="menu flex w-full max-w-xl flex-col items-stretch gap-4">
+          <a href="profile.html" class="menu-link relative flex w-full items-center justify-center bg-primary-900 bg-opacity-40 backdrop-blur-md">Profile</a>
+          <a href="projects.html" class="menu-link relative flex w-full items-center justify-center bg-primary-900 bg-opacity-40 backdrop-blur-md">Projects</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="flex flex-wrap items-center justify-center gap-4 bg-primary-900 px-4 py-4 lg:px-8 lg:py-10">
+      <span>© 2026 ujchoi</span>
+    </footer>
+
+  </div>
 </body>
 </html>
